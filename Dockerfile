@@ -1,4 +1,4 @@
-FROM maven:3.5.3-jdk-10
+FROM maven:3.5.3-jdk-8
 MAINTAINER Serfim TIC
 
 # Install Python for AWS CLI

@@ -1,10 +1,17 @@
-FROM maven:3.5.3-jdk-8
+FROM ubuntu:16.04
 MAINTAINER Serfim TIC
 
-# Install Python for AWS CLI
-RUN add-apt-repository ppa:deadsnakes/ppa -y \
-    && apt-get update \ 
-    && apt-get install python3.6
+# Base MVN / NPM
+RUN apt update && apt install -y \
+  locales \
+  build-essential \
+  git \
+  openjdk-8-jdk \
+  maven \
+  curl 
+  
+# Install Python/ Pip
+RUN apt install -y python-pip
 
 # Install AWS CLI
 RUN pip install awscli --ignore-installed six

@@ -1,8 +1,9 @@
-FROM maven:3.6-jdk-8
+FROM maven:3.5.3-jdk-10
 MAINTAINER Serfim TIC
 
 # Install Python for AWS CLI
-RUN apt-get update \ 
+RUN add-apt-repository ppa:deadsnakes/ppa -y \
+    && apt-get update \ 
     && apt-get install python3.6
 
 # Install AWS CLI
